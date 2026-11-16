@@ -53,10 +53,11 @@
           "package": "com.DefaultCompany.Prismatica",
           "versionCode": 1
         }
-      }
+      },
+      "icon": "art/pulsegrid-icon.png?v=mwjvpmjc"
     }
   ],
-  "updated": "2026-11-16T23:12:33.380Z",
+  "updated": "2026-11-16T23:12:45.912Z",
   "launcher": {
     "android": {
       "version": "0.1.1",
