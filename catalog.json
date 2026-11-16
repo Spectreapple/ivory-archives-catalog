@@ -17,9 +17,27 @@
           "executable": "Stickfight Rumble.exe"
         }
       }
+    },
+    {
+      "id": "notfungolf-pe",
+      "name": "Not Fun Golf: Pocket Edition",
+      "version": "1.0.1",
+      "releaseDate": "2026-11-16",
+      "changelog": [
+        "Version 1.0.1"
+      ],
+      "builds": {
+        "android": {
+          "url": "https://github.com/Spectreapple/ivory-archives-catalog/releases/download/notfungolf-pe-v1.0.1/notfungolf-pe-1.0.1-android.apk",
+          "sha256": "2e8c9a8c9dd15e7b10272652dab91bce4a217804f68316e6491436f3d76a7cd6",
+          "size": 66961819,
+          "package": "com.DefaultCompany.NotFunGolfPE",
+          "versionCode": 1
+        }
+      }
     }
   ],
-  "updated": "2026-11-16T22:06:43.252Z",
+  "updated": "2026-11-16T22:53:10.256Z",
   "launcher": {
     "android": {
       "version": "0.1.1",
