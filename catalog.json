@@ -14,7 +14,8 @@
           "url": "https://github.com/Spectreapple/ivory-archives-catalog/releases/download/stickfight-rumble-v1.9/stickfight-rumble-1.9-win64.zip",
           "sha256": "ecd273e3473c02a8f4e48927f689411bb928dddae414ebf3357661017433d70d",
           "size": 82309327,
-          "executable": "Stickfight Rumble.exe"
+          "executable": "Stickfight Rumble.exe",
+          "manifest": "manifests/stickfight-rumble-1.9.json"
         }
       }
     },
@@ -57,7 +58,7 @@
       "icon": "art/pulsegrid-icon.png?v=mwjvpmjc"
     }
   ],
-  "updated": "2026-11-16T23:12:45.912Z",
+  "updated": "2026-11-16T23:35:02.225Z",
   "launcher": {
     "android": {
       "version": "0.1.2",
