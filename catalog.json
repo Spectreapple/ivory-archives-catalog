@@ -35,9 +35,27 @@
           "versionCode": 1
         }
       }
+    },
+    {
+      "id": "pulsegrid",
+      "name": "PulseGrid",
+      "version": "1.0.1",
+      "releaseDate": "2026-11-16",
+      "changelog": [
+        "Version 1.0.1"
+      ],
+      "builds": {
+        "android": {
+          "url": "https://github.com/Spectreapple/ivory-archives-catalog/releases/download/pulsegrid-v1.0.1/pulsegrid-1.0.1-android.apk",
+          "sha256": "e554c79442106a1fde3288f1f5b32182d220eabbe49ea8f10102f7ef0a76f827",
+          "size": 52113711,
+          "package": "com.DefaultCompany.Prismatica",
+          "versionCode": 1
+        }
+      }
     }
   ],
-  "updated": "2026-11-16T22:53:10.256Z",
+  "updated": "2026-11-16T22:53:21.515Z",
   "launcher": {
     "android": {
       "version": "0.1.1",
