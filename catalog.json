@@ -60,11 +60,11 @@
   "updated": "2026-11-16T23:12:45.912Z",
   "launcher": {
     "android": {
-      "version": "0.1.1",
-      "versionCode": 101,
+      "version": "0.1.2",
+      "versionCode": 102,
       "url": "https://github.com/Spectreapple/ivory-archives-catalog/releases/download/launcher/Ivory-Archives.apk",
-      "sha256": "28ee142d608a452e90119c0c63624b54e386fa1026255cf641a1dcab561930db",
-      "size": 3251013
+      "sha256": "8248969b6be8e128a88230fd0a5e9cff70f6a65b8cb45fc7936fc61fbce8b160",
+      "size": 3251343
     }
   }
 }
