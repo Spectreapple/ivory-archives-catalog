@@ -34,7 +34,8 @@
           "package": "com.DefaultCompany.NotFunGolfPE",
           "versionCode": 1
         }
-      }
+      },
+      "icon": "art/notfungolf-pe-icon.png?v=mwjvpcv8"
     },
     {
       "id": "pulsegrid",
@@ -55,7 +56,7 @@
       }
     }
   ],
-  "updated": "2026-11-16T23:01:57.681Z",
+  "updated": "2026-11-16T23:12:33.380Z",
   "launcher": {
     "android": {
       "version": "0.1.1",
