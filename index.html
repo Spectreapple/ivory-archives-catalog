@@ -1,0 +1,172 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <title>Ivory Archives</title>
+  <meta name="description" content="Download Ivory Archives, the home of ivory.inc games, for Windows and Android." />
+  <meta name="theme-color" content="#0d0d0f" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1080 1080'%3E%3Crect width='1080' height='1080' rx='240' fill='%230b0b0c'/%3E%3Cg fill='%23fff'%3E%3Cpolygon points='240,259 507,259 374,491'/%3E%3Cpolygon points='539,287 681,535 540,778 398,535'/%3E%3Cpolygon points='705,573 838,807 571,807'/%3E%3C/g%3E%3C/svg%3E" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400..800&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --bg: #0d0d0f; --panel: rgb(255 255 255 / 0.04); --line: rgb(255 255 255 / 0.08);
+      --text: #f3efe6; --text-2: rgb(243 239 230 / 0.62); --text-3: rgb(243 239 230 / 0.4);
+      --accent: #ece4d4; --ease: cubic-bezier(0.2, 0.8, 0.2, 1);
+    }
+    * { box-sizing: border-box; }
+    html, body { margin: 0; min-height: 100%; }
+    body {
+      background: var(--bg); color: var(--text); font-family: Inter, 'Segoe UI', system-ui, sans-serif;
+      -webkit-font-smoothing: antialiased; display: flex; flex-direction: column; align-items: center;
+      padding: max(56px, env(safe-area-inset-top)) 16px max(32px, env(safe-area-inset-bottom));
+      overflow-x: hidden;
+    }
+    .glow {
+      position: fixed; top: -35vh; left: 50%; width: 900px; max-width: 160vw; height: 70vh; transform: translateX(-50%);
+      background: radial-gradient(closest-side, rgb(236 228 212 / 0.5), transparent); opacity: 0.16; filter: blur(60px);
+      pointer-events: none;
+    }
+    main { position: relative; width: 100%; max-width: 760px; display: flex; flex-direction: column; align-items: center; text-align: center; }
+    .mark { width: 92px; height: 85px; fill: var(--text); overflow: visible; }
+    .mark polygon { transform-box: fill-box; transform-origin: center; }
+    .mark .d { animation: open 0.6s var(--ease) 0.1s both; }
+    .mark .t { animation: slideT 0.7s cubic-bezier(0.3, 1.4, 0.5, 1) 0.42s both; }
+    .mark .b { animation: slideB 0.7s cubic-bezier(0.3, 1.4, 0.5, 1) 0.52s both; }
+    @keyframes open { from { transform: scale(0.6, 0); opacity: 0; } }
+    @keyframes slideT { from { transform: translate(-130px, -220px); opacity: 0; } }
+    @keyframes slideB { from { transform: translate(130px, 220px); opacity: 0; } }
+    .rise { animation: rise 0.7s var(--ease) both; }
+    @keyframes rise { from { opacity: 0; transform: translateY(12px); filter: blur(6px); } }
+    h1 { font-size: clamp(36px, 8vw, 56px); font-weight: 760; letter-spacing: -0.045em; margin: 30px 0 10px; line-height: 1; }
+    .lede { color: var(--text-2); font-size: 17px; line-height: 1.55; margin: 0 0 32px; max-width: 460px; }
+    .cta { display: flex; flex-direction: column; align-items: center; gap: 12px; width: 100%; }
+    .btn {
+      display: inline-flex; align-items: center; justify-content: center; gap: 10px; height: 56px; padding: 0 30px;
+      border-radius: 16px; font-weight: 650; font-size: 16.5px; text-decoration: none; transition: transform 0.15s var(--ease), filter 0.15s, background-color 0.15s;
+      min-width: 260px;
+    }
+    .btn:active { transform: scale(0.97); }
+    .btn-primary { background: var(--accent); color: #141210; box-shadow: 0 12px 32px -12px rgb(236 228 212 / 0.6), inset 0 1px 0 rgb(255 255 255 / 0.3); }
+    .btn-primary:hover { filter: brightness(1.05); }
+    .btn-quiet { background: var(--panel); color: var(--text); box-shadow: inset 0 0 0 1px var(--line); }
+    .btn-quiet:hover { background: rgb(255 255 255 / 0.07); }
+    .btn svg { width: 20px; height: 20px; }
+    .note { color: var(--text-3); font-size: 13px; line-height: 1.5; max-width: 420px; margin: 4px 0 0; }
+    .unavailable { padding: 16px 20px; border-radius: 14px; background: var(--panel); border: 1px solid var(--line); color: var(--text-2); font-size: 15px; line-height: 1.5; max-width: 420px; }
+    .other { margin-top: 14px; font-size: 13.5px; color: var(--text-3); }
+    .other a { color: var(--text-2); text-decoration: none; border-bottom: 1px solid var(--line); }
+    .other a:hover { color: var(--text); }
+    section { width: 100%; margin-top: 64px; text-align: left; }
+    section h2 { font-size: 12px; font-weight: 650; letter-spacing: 0.14em; text-transform: uppercase; color: var(--text-3); margin: 0 0 14px; }
+    .games { display: grid; grid-template-columns: repeat(auto-fill, minmax(210px, 1fr)); gap: 12px; }
+    .game { border-radius: 16px; overflow: hidden; background: var(--panel); border: 1px solid var(--line); }
+    .art { position: relative; aspect-ratio: 16 / 9; overflow: hidden; background: hsl(var(--h) 25% 12%); }
+    .art::before {
+      content: ''; position: absolute; inset: 0;
+      background:
+        radial-gradient(110% 85% at 16% 8%, hsl(var(--h) 60% 64% / 0.9), transparent 58%),
+        radial-gradient(90% 90% at 92% 100%, hsl(calc(var(--h) + 48) 60% 48% / 0.75), transparent 60%),
+        linear-gradient(155deg, hsl(var(--h) 32% 18%), hsl(calc(var(--h) + 28) 38% 6%));
+    }
+    .art img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+    .game-body { padding: 12px 14px 14px; }
+    .game-body h3 { margin: 0 0 6px; font-size: 15px; font-weight: 650; letter-spacing: -0.01em; }
+    .chips { display: flex; gap: 6px; flex-wrap: wrap; }
+    .chip { font-size: 11.5px; font-weight: 600; padding: 3px 8px; border-radius: 99px; background: rgb(255 255 255 / 0.06); color: var(--text-2); }
+    footer { margin-top: 64px; color: var(--text-3); font-size: 12.5px; text-align: center; }
+    @media (prefers-reduced-motion: reduce) { .mark polygon, .rise { animation: none !important; } }
+  </style>
+</head>
+<body>
+  <div class="glow" aria-hidden="true"></div>
+  <main>
+    <svg class="mark" viewBox="220 240 640 590" role="img" aria-label="ivory.inc">
+      <polygon class="t" points="240,259 507,259 374,491" />
+      <polygon class="d" points="539,287 681,535 540,778 398,535" />
+      <polygon class="b" points="705,573 838,807 571,807" />
+    </svg>
+    <h1 class="rise" style="animation-delay: 0.85s">Ivory Archives</h1>
+    <p class="lede rise" style="animation-delay: 0.95s">Every ivory.inc game in one place. Install once, and new games and updates arrive on their own.</p>
+    <div class="cta rise" id="cta" style="animation-delay: 1.05s"></div>
+
+    <section id="games-section" hidden>
+      <h2>In the archive</h2>
+      <div class="games" id="games"></div>
+    </section>
+    <footer>© <span id="year"></span> ivory.inc</footer>
+  </main>
+
+  <script>
+    const BASE = 'https://github.com/Spectreapple/ivory-archives-catalog/releases/download/launcher/';
+    const WINDOWS = BASE + 'Ivory-Archives-Setup.exe';
+    const ANDROID = BASE + 'Ivory-Archives.apk';
+    const icons = {
+      windows: '<svg viewBox="0 0 24 24" fill="currentColor"><path d="M3 5.5 10.5 4.5v7H3zm8.5-1.2L21 3v8.5h-9.5zM3 12.5h7.5v7L3 18.5zm8.5 0H21V21l-9.5-1.3z"/></svg>',
+      android: '<svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.6 9.48 19.44 6.3a.38.38 0 0 0-.66-.38l-1.86 3.22a11.5 11.5 0 0 0-9.84 0L5.22 5.92a.38.38 0 1 0-.66.38L6.4 9.48A10.8 10.8 0 0 0 1 18h22a10.8 10.8 0 0 0-5.4-8.52ZM7 15.25a1.25 1.25 0 1 1 0-2.5 1.25 1.25 0 0 1 0 2.5Zm10 0a1.25 1.25 0 1 1 0-2.5 1.25 1.25 0 0 1 0 2.5Z"/></svg>',
+    };
+    const ua = navigator.userAgent;
+    const isIOS = /iPhone|iPad|iPod/.test(ua) || (navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1);
+    const isAndroid = /Android/i.test(ua);
+    const isWindows = /Windows/i.test(ua) && !isAndroid;
+
+    const btn = (href, label, icon, primary) =>
+      `<a class="btn ${primary ? 'btn-primary' : 'btn-quiet'}" href="${href}">${icons[icon]}${label}</a>`;
+    const cta = document.getElementById('cta');
+    if (isAndroid) {
+      cta.innerHTML = btn(ANDROID, 'Download for Android', 'android', true) +
+        '<p class="note">If Android asks, allow your browser to install apps, then open the download.</p>' +
+        `<p class="other">On a PC? <a href="${WINDOWS}">Download for Windows</a></p>`;
+    } else if (isIOS) {
+      cta.innerHTML = '<div class="unavailable">Ivory Archives isn’t available on iPhone or iPad. Apple only allows apps from the App Store. Open this page on a Windows PC or an Android phone.</div>';
+    } else if (isWindows) {
+      cta.innerHTML = btn(WINDOWS, 'Download for Windows', 'windows', true) +
+        '<p class="note">If Windows shows “Windows protected your PC”, choose More info → Run anyway.</p>' +
+        `<p class="other">On Android? <a href="${ANDROID}">Download for Android</a></p>`;
+    } else {
+      cta.innerHTML = btn(WINDOWS, 'Download for Windows', 'windows', true) + btn(ANDROID, 'Download for Android', 'android', false);
+    }
+
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    const hue = (s) => [...(s || '')].reduce((h, c) => (h * 31 + c.charCodeAt(0)) % 360, 0);
+    const hexHue = (hex) => {
+      const m = /^#([0-9a-f]{6})$/i.exec(hex || '');
+      if (!m) return null;
+      const n = parseInt(m[1], 16);
+      const [r, g, b] = [(n >> 16) & 255, (n >> 8) & 255, n & 255].map((v) => v / 255);
+      const max = Math.max(r, g, b), min = Math.min(r, g, b), d = max - min;
+      if (!d) return 0;
+      const h = max === r ? (g - b) / d + (g < b ? 6 : 0) : max === g ? (b - r) / d + 2 : (r - g) / d + 4;
+      return Math.round(h * 60);
+    };
+    const esc = (s) => String(s).replace(/[&<>"']/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
+
+    fetch('catalog.json', { cache: 'no-store' })
+      .then((r) => (r.ok ? r.json() : null))
+      .then((cat) => {
+        const games = (cat?.games || []).filter((g) => g && g.name);
+        if (!games.length) return;
+        document.getElementById('games').innerHTML = games.map((g) => {
+          const builds = g.builds || {};
+          const plats = [builds.win32 && 'Windows', builds.android && 'Android'].filter(Boolean);
+          let cover = '';
+          if (typeof g.cover === 'string' && g.cover) {
+            try {
+              const u = new URL(g.cover, location.href);
+              if (u.protocol === 'https:' || u.origin === location.origin) cover = `<img src="${esc(u.href)}" alt="" loading="lazy">`;
+            } catch (e) { /* ignore bad URLs */ }
+          }
+          const h = hexHue(g.accent) ?? hue(g.id);
+          return `<div class="game"><div class="art" style="--h:${h}">${cover}</div><div class="game-body"><h3>${esc(g.name)}</h3><div class="chips">${
+            (plats.length ? plats : ['Coming soon']).map((p) => `<span class="chip">${p}</span>`).join('')
+          }</div></div></div>`;
+        }).join('');
+        document.getElementById('games-section').hidden = false;
+      })
+      .catch(() => {});
+  </script>
+</body>
+</html>
