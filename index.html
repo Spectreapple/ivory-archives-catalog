@@ -72,6 +72,11 @@
         linear-gradient(155deg, hsl(var(--h) 32% 18%), hsl(calc(var(--h) + 28) 38% 6%));
     }
     .art img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+    .art img.backdrop { inset: -25%; width: 150%; height: 150%; filter: blur(30px) saturate(1.5) brightness(0.75); }
+    .art img.icon {
+      inset: auto; left: 50%; top: 50%; width: auto; height: 52%; aspect-ratio: 1; transform: translate(-50%, -50%);
+      border-radius: 22%; box-shadow: 0 14px 30px -10px rgb(0 0 0 / 0.6), 0 0 0 1px rgb(255 255 255 / 0.08);
+    }
     .game-body { padding: 12px 14px 14px; }
     .game-body h3 { margin: 0 0 6px; font-size: 15px; font-weight: 650; letter-spacing: -0.01em; }
     .chips { display: flex; gap: 6px; flex-wrap: wrap; }
@@ -152,13 +157,20 @@
         document.getElementById('games').innerHTML = games.map((g) => {
           const builds = g.builds || {};
           const plats = [builds.win32 && 'Windows', builds.android && 'Android'].filter(Boolean);
-          let cover = '';
-          if (typeof g.cover === 'string' && g.cover) {
+          const safeUrl = (v) => {
+            if (typeof v !== 'string' || !v) return null;
             try {
-              const u = new URL(g.cover, location.href);
-              if (u.protocol === 'https:' || u.origin === location.origin) cover = `<img src="${esc(u.href)}" alt="" loading="lazy">`;
-            } catch (e) { /* ignore bad URLs */ }
-          }
+              const u = new URL(v, location.href);
+              return u.protocol === 'https:' || u.origin === location.origin ? u.href : null;
+            } catch (e) { return null; }
+          };
+          const coverUrl = safeUrl(g.cover);
+          const iconUrl = safeUrl(g.icon);
+          const cover = coverUrl
+            ? `<img src="${esc(coverUrl)}" alt="" loading="lazy">`
+            : iconUrl
+              ? `<img class="backdrop" src="${esc(iconUrl)}" alt="" loading="lazy"><img class="icon" src="${esc(iconUrl)}" alt="" loading="lazy">`
+              : '';
           const h = hexHue(g.accent) ?? hue(g.id);
           return `<div class="game"><div class="art" style="--h:${h}">${cover}</div><div class="game-body"><h3>${esc(g.name)}</h3><div class="chips">${
             (plats.length ? plats : ['Coming soon']).map((p) => `<span class="chip">${p}</span>`).join('')
