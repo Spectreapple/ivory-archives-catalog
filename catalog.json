@@ -66,24 +66,24 @@
         "App",
         "Launcher"
       ],
-      "version": "1.1.2",
+      "version": "1.1.3",
       "releaseDate": "2026-11-24",
       "changelog": [
-        "fixed font text bug"
+        "Updated so grid is cleaner"
       ],
       "builds": {
         "android": {
-          "url": "https://github.com/Spectreapple/ivory-archives-catalog/releases/download/ivory-launcher-v1.1.2/ivory-launcher-1.1.2-android.apk",
-          "sha256": "eaf6b5663a8285ec0ea9d2d0963f9a7fa55235d007c19c784eaedd768a0009f9",
-          "size": 134891,
+          "url": "https://github.com/Spectreapple/ivory-archives-catalog/releases/download/ivory-launcher-v1.1.3/ivory-launcher-1.1.3-android.apk",
+          "sha256": "07170ea6f6e9e69e1da589400175c74800b21764867d4a129353868a4f9736df",
+          "size": 140379,
           "package": "inc.ivory.launcher",
-          "versionCode": 4
+          "versionCode": 5
         }
       },
       "description": "Your apps in a smooth A-Z grid or a clean list, a big clock in the font you like, and a bar for search, agenda, notes and music. Hold an empty spot to customize the theme, accent, clock and layout with a live preview. Or try the Workbench: your apps as keys on a desk mat that sorts itself and sends apps you never open to the Bin. Light on battery: nothing on the home screen animates while you are not touching it."
     }
   ],
-  "updated": "2026-11-24T20:54:09.867Z",
+  "updated": "2026-11-24T21:05:46.205Z",
   "launcher": {
     "android": {
       "version": "0.1.4",
