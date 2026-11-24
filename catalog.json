@@ -56,9 +56,34 @@
         }
       },
       "icon": "art/pulsegrid-icon.png?v=mwjvpmjc"
+    },
+    {
+      "id": "ivory-launcher",
+      "name": "Ivory Launcher",
+      "tagline": "A calm, fast home screen for Android.",
+      "accent": "#8fd4b4",
+      "tags": [
+        "App",
+        "Launcher"
+      ],
+      "version": "1.1.0",
+      "releaseDate": "2026-11-24",
+      "changelog": [
+        "New look with Slate, Black and Paper themes",
+        "Hold an empty spot on home to customize"
+      ],
+      "builds": {
+        "android": {
+          "url": "https://github.com/Spectreapple/ivory-archives-catalog/releases/download/ivory-launcher-v1.1.0/ivory-launcher-1.1.0-android.apk",
+          "sha256": "5880dbf3dff8cc8b1139f3618cff4cf69f6f345a9b67411fbe59e95280463a71",
+          "size": 117303,
+          "package": "inc.ivory.launcher",
+          "versionCode": 2
+        }
+      }
     }
   ],
-  "updated": "2026-11-16T23:35:02.225Z",
+  "updated": "2026-11-24T20:10:09.211Z",
   "launcher": {
     "android": {
       "version": "0.1.4",
