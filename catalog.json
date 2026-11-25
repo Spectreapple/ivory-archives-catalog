@@ -88,30 +88,30 @@
       "tagline": "Link procedural worlds. Watch life spread between them.",
       "description": "A calm growing game in an endless procedural universe. Drag lanes between worlds and life drifts along them: flora and fauna migrate, adapt to new habitats and evolve into species nobody has seen before. Open any world to spin its globe and study its conditions, habitats and everything living there. Pulse your worlds for Spark, upgrade your reach, and fill the Board of Exploration with every world, species and habitat you find. Your worlds keep growing while you are away.",
       "accent": "#c9f7d8",
-      "cover": "art/ivory-orrery.png?v=mwwln6by",
-      "icon": "art/ivory-orrery-icon.png?v=mwwln7wa",
+      "cover": "art/ivory-orrery.png?v=mwwme03k",
+      "icon": "art/ivory-orrery-icon.png?v=mwwme1x4",
       "tags": [
         "App",
         "Game",
         "Space"
       ],
-      "version": "1.0.1",
+      "version": "1.0.2",
       "releaseDate": "2026-11-25",
       "changelog": [
-        "Version 1.0.1"
+        "Version 1.0.2"
       ],
       "builds": {
         "win32": {
-          "url": "https://github.com/Spectreapple/ivory-archives-catalog/releases/download/ivory-orrery-v1.0.1/ivory-orrery-1.0.1-win64.zip",
-          "sha256": "0cb84b37c05bfb83594f709b16cd352596f8a9e1e18a26d76c978267353d5e65",
-          "size": 118003935,
+          "url": "https://github.com/Spectreapple/ivory-archives-catalog/releases/download/ivory-orrery-v1.0.2/ivory-orrery-1.0.2-win64.zip",
+          "sha256": "33d03708adb62afef699374e8e53534fba3225576d54fb9acbedbb9b61322dc2",
+          "size": 118018688,
           "executable": "Ivory Orrery.exe",
-          "manifest": "manifests/ivory-orrery-1.0.1.json"
+          "manifest": "manifests/ivory-orrery-1.0.2.json"
         }
       }
     }
   ],
-  "updated": "2026-11-25T20:52:06.966Z",
+  "updated": "2026-11-25T21:12:58.297Z",
   "launcher": {
     "android": {
       "version": "0.1.5",
