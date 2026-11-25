@@ -81,9 +81,37 @@
         }
       },
       "description": "Your apps in a smooth A-Z grid or a clean list, a big clock in the font you like, and a bar for search, agenda, notes and music. Hold an empty spot to customize the theme, accent, clock and layout with a live preview. Or try the Workbench: your apps as keys on a desk mat that sorts itself and sends apps you never open to the Bin. Light on battery: nothing on the home screen animates while you are not touching it."
+    },
+    {
+      "id": "ivory-orrery",
+      "name": "Ivory Orrery",
+      "tagline": "Link procedural worlds. Watch life spread between them.",
+      "description": "A calm growing game in an endless procedural universe. Drag lanes between worlds and life drifts along them: flora and fauna migrate, adapt to new habitats and evolve into species nobody has seen before. Open any world to spin its globe and study its conditions, habitats and everything living there. Pulse your worlds for Spark, upgrade your reach, and fill the Board of Exploration with every world, species and habitat you find. Your worlds keep growing while you are away.",
+      "accent": "#c9f7d8",
+      "cover": "art/ivory-orrery.png?v=mwwjli5z",
+      "icon": "art/ivory-orrery-icon.png?v=mwwjljh4",
+      "tags": [
+        "App",
+        "Game",
+        "Space"
+      ],
+      "version": "1.0.0",
+      "releaseDate": "2026-11-25",
+      "changelog": [
+        "First release: link worlds, watch life spread and evolve"
+      ],
+      "builds": {
+        "win32": {
+          "url": "https://github.com/Spectreapple/ivory-archives-catalog/releases/download/ivory-orrery-v1.0.0/ivory-orrery-1.0.0-win64.zip",
+          "sha256": "6526f8f5cf28f2f38be4462a18297771a1f3407f425a9e5e078be4165a96f441",
+          "size": 117973596,
+          "executable": "Ivory Orrery.exe",
+          "manifest": "manifests/ivory-orrery-1.0.0.json"
+        }
+      }
     }
   ],
-  "updated": "2026-11-25T17:21:40.259Z",
+  "updated": "2026-11-25T19:54:48.456Z",
   "launcher": {
     "android": {
       "version": "0.1.5",
