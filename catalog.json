@@ -66,18 +66,20 @@
         "App",
         "Launcher"
       ],
-      "version": "1.1.9",
-      "releaseDate": "2026-11-25",
+      "version": "1.1.10",
+      "releaseDate": "2026-11-26",
       "changelog": [
-        "Icons fill their keys again"
+        "Wallpaper works with every theme, without the dark tint",
+        "Workbench: search, a sort that stays, groups show every app",
+        "Smoother opening of the apps"
       ],
       "builds": {
         "android": {
-          "url": "https://github.com/Spectreapple/ivory-archives-catalog/releases/download/ivory-launcher-v1.1.9/ivory-launcher-1.1.9-android.apk",
-          "sha256": "9c3901a070a21b3ae10ef18d42fd02fa36415de845880c3e4434c34842ae2221",
-          "size": 152939,
+          "url": "https://github.com/Spectreapple/ivory-archives-catalog/releases/download/ivory-launcher-v1.1.10/ivory-launcher-1.1.10-android.apk",
+          "sha256": "6e9a9c9b7d4954384e412738f14d5706e0aa3f6ce2e5f7409a75d30e2e73e470",
+          "size": 153099,
           "package": "inc.ivory.launcher",
-          "versionCode": 11
+          "versionCode": 12
         }
       },
       "description": "Your apps in a smooth A-Z grid or a clean list, a big clock in the font you like, and a bar for search, agenda, notes and music. Hold an empty spot to customize the theme, accent, clock and layout with a live preview. Or try the Workbench: your apps as keys on a desk mat that sorts itself and sends apps you never open to the Bin. Light on battery: nothing on the home screen animates while you are not touching it."
@@ -111,7 +113,7 @@
       }
     }
   ],
-  "updated": "2026-11-25T21:12:58.297Z",
+  "updated": "2026-11-26T20:42:30.790Z",
   "launcher": {
     "android": {
       "version": "0.1.5",
